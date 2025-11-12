@@ -1,29 +1,29 @@
-from flask import flask 
+from flask import Flask, render_template
 #main flask code 
-app = Flask(_name_)
+app = Flask(__name__)
 @app.route('/')
 def index():
-    return render_templates("index.html")
+    return render_template("Recommended.html")
 
 @app.route('/login')
 def login():
-    return render_templates("login.html")
+    return render_template("login.html")
 
 @app.route('/login-process', methods=["POST"])
 def login_process():
     if requests.methods == "POST":
-    email=request.form("email")
-    password=request.form("password")
-    row = services.login(email,password)
-    if not row:
-        return redirect(url_for("login"))
+        email=request.form("email")
+        password=request.form("password")
+        row = services.login(email,password)
+        if not row:
+            return redirect(url_for("login"))
     return redirect(url_for("index"))
 @app.route('/register')
-   def register():
-    return render_templates("register.html")
+def register():
+    return render_template("register.html")
 
-@app.route('/register-process', method=["POST"])
- def register_process():
+@app.route('/register-process', methods=["POST"])
+def register_process():
     if requests.methods == "POST":
         user_name = request.form["name"]
         email = request.form["email"]
@@ -33,6 +33,6 @@ def login_process():
             return redirect(url_for("register"))
         return redirect(url_for("login"))
 
-if _name_ == "__main__":
-    app.run()
+if __name__ == "__main__":
+    app.run(debug=True)
 
