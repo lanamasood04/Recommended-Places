@@ -1,24 +1,5 @@
 body {
   background: linear-gradient(#e66465, #9198e5);
- 
-  .container {
-        width: 50%;
-        margin: 0 auto;
-
-    }
-    svg#flower-frame{
-        height: 45vh;
-        width: 50%;
-    }
-    #Footer_group_1_,
-    [id^=PinkFlowerGroup],
-    [id^=BaseGroup] path,
-    [id^=LeafGroup] path,
-    g[id^=BudGroup] g[id^=BudGroup] g[id^=Bud],
-    [id^=Dots],
-    [id^=Flourish] {
-        visibility: hidden;
-    }
 }
 
 form {
